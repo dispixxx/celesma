@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Celesma - Вход</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #16213E;
+            font-family: 'Roboto', sans-serif;
+            color: #FFFFFF;
+        }
+        .form-container {
+            background-color: #1A1A2E;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .form-container h1 {
+            color: #00B4D8;
+            margin-bottom: 20px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #16213E;
+            color: #FFFFFF;
+        }
+        .form-container input::placeholder {
+            color: #A9A9A9;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #00B4D8;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background-color: #0096C7;
+        }
+        .form-container p {
+            margin-top: 15px;
+            color: #A9A9A9;
+        }
+        .form-container a {
+            color: #00B4D8;
+            text-decoration: none;
+        }
+        .form-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h1>Celesma</h1>
+    <h2>Вход</h2>
+    <form th:action="@{/auth/login}" method="post" th:object="${user}">
+        <input type="email" th:field="*{email}" placeholder="Электронная почта" required>
+        <input type="password" th:field="*{password}" placeholder="Пароль" required>
+        <button type="submit">Войти</button>
+    </form>
+    <p>Нет аккаунта? <a href="/auth/register">Зарегистрироваться</a></p>
+</div>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Здесь можно добавить отправку данных на сервер
+        alert("Вход выполнен!");
+        window.location.href = "dashboard.html"; // Перенаправление на главную страницу
+    });
+</script>
+</body>
+</html>

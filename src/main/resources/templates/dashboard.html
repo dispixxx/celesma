@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Project Management</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        body {
+            background-color: #0A192F;
+            color: #E0E7FF;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #112240;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .column {
+            background-color: #1B2A4E;
+            padding: 15px;
+            border-radius: 8px;
+            width: 30%;
+            min-height: 400px;
+        }
+        .task {
+            background-color: #2C3E67;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<div class="navbar">Project Management Board</div>
+<div class="container">
+    <div class="column">
+        <h2>To Do</h2>
+        <div class="task">Task 1</div>
+        <div class="task">Task 2</div>
+    </div>
+    <div class="column">
+        <h2>In Progress</h2>
+        <div class="task">Task 3</div>
+    </div>
+    <div class="column">
+        <h2>Done</h2>
+        <div class="task">Task 4</div>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
